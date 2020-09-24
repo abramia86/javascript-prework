@@ -32,3 +32,22 @@ if (playerInput == '1') {
 
 
 printMessage('Twoj ruch to:' + playerMove);
+
+function printResult(pMove, cMove) {
+	if(pMove === cMove) {
+		printMessage("remis"); 
+	}else if(pMove === "kamień" && cMove === "nożyce"){
+		printMessage("wygrałeś");
+	}else if(pMove ==="kamień" && cMove === "papier"){
+		printMessage("przegrałeś");
+	}else if(pMove ==="nożyce" && cMove === "kamień"){
+		printMessage("przegrałeś");
+	}else if(pMove ==="nożyce" && cMove === "papier"){
+		printMessage("wygrałeś");
+	}else if(pMove ==="nieznany ruch"){
+		printMessage("wybierz: 1, 2 lub 3");
+	}
+} 	
+
+
+printResult(playerMove, computerMove);
