@@ -1,6 +1,7 @@
-function playGame(playerInput){
+{
+	const playGame = function(playerInput){
 	clearMessages();
-	function getMoveName(move) {
+	const getMoveName = function (move) {
 		if (move == 1){
 			return "kamień";
 		} else if(move == 2){
@@ -10,11 +11,11 @@ function playGame(playerInput){
 		}
 	}
 	
-	let randomNumber = Math.floor(Math.random() * 3 + 1);
+	const randomNumber = Math.floor(Math.random() * 3 + 1);
 	
 	console.log("Wylosowana liczba to:" + randomNumber);
 	
-	let computerMove = 'nieznany ruch';
+	const computerMove = 'nieznany ruch';
 	
 	computerMove = getMoveName(randomNumber);
 	
@@ -22,14 +23,14 @@ function playGame(playerInput){
 	
 	console.log("Gracz wpisał:" + playerInput);
 	
-	let playerMove = 'nieznany ruch';
+	const playerMove = 'nieznany ruch';
 	
 	playerMove = getMoveName(playerInput);
 	
 	
 	printMessage('Twoj ruch to:' + playerMove);
 	
-	function displayResult(pMove, cMove) {
+	const displayResult = function (pMove, cMove) {
 		if(pMove === cMove) {
 			printMessage("remis"); 
 		}else if(pMove === "kamień" && cMove === "nożyce"){
@@ -62,3 +63,4 @@ buttonPaper.addEventListener('click', function(){
 buttonScissors.addEventListener('click', function(){
 	playGame(3)
 })
+}
